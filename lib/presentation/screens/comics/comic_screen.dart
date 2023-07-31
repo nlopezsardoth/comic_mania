@@ -72,7 +72,7 @@ class _ComicDetails extends StatelessWidget {
               comic.thumbNailPath,
               width: size.width * 0.8,
               height: size.height * 0.7,
-              fit: BoxFit.contain,
+              fit: BoxFit.fill,
             ),
           ),
 
@@ -86,7 +86,7 @@ class _ComicDetails extends StatelessWidget {
           _CreatorsWidget(
             comic: comic,
             role: Role.penciler,
-            title: "Peniler",
+            title: "Penciler",
           ),
           _CreatorsWidget(
             comic: comic,
