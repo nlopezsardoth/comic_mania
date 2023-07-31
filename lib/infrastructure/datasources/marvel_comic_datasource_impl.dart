@@ -34,7 +34,7 @@ class MarvelComicsDatasource extends ComicsDatasource {
       final List<Comic> comics = marvelResponse.data.results
           .map((comicMarvel) => ComicMapper().marvelComicToEntity(comicMarvel))
           .toList();
-      log(comics.length.toString());
+
       return comics;
     } catch (e) {
       log(e.toString());
@@ -61,7 +61,6 @@ class MarvelComicsDatasource extends ComicsDatasource {
       final List<Comic> comics = marvelResponse.data.results
           .map((comicMarvel) => ComicMapper().marvelComicToEntity(comicMarvel))
           .toList();
-      log(comics.length.toString());
 
       return comics;
     } catch (e) {
@@ -89,7 +88,6 @@ class MarvelComicsDatasource extends ComicsDatasource {
       final List<Comic> comics = marvelResponse.data.results
           .map((comicMarvel) => ComicMapper().marvelComicToEntity(comicMarvel))
           .toList();
-      log(comics.length.toString());
 
       return comics;
     } catch (e) {
@@ -117,7 +115,6 @@ class MarvelComicsDatasource extends ComicsDatasource {
       final List<Comic> comics = marvelResponse.data.results
           .map((comicMarvel) => ComicMapper().marvelComicToEntity(comicMarvel))
           .toList();
-      log(comics.length.toString());
 
       return comics;
     } catch (e) {
@@ -145,12 +142,34 @@ class MarvelComicsDatasource extends ComicsDatasource {
       final List<Comic> comics = marvelResponse.data.results
           .map((comicMarvel) => ComicMapper().marvelComicToEntity(comicMarvel))
           .toList();
-      log(comics.length.toString());
 
       return comics;
     } catch (e) {
       log(e.toString());
       return [];
+    }
+  }
+
+  @override
+  Future<Comic?> getComicById(String id) async {
+    try {
+      final Map<String, dynamic> queryParameters =
+          await EncryptionService().marvelEncryption();
+
+      final response = await dio.get(
+        '/comics/$id',
+        queryParameters: queryParameters,
+      );
+      final marvelResponse = MarvelResponse.fromJson(response.data);
+
+      final List<Comic> comics = marvelResponse.data.results
+          .map((comicMarvel) => ComicMapper().marvelComicToEntity(comicMarvel))
+          .toList();
+
+      return comics[0];
+    } catch (e) {
+      log(e.toString());
+      return null;
     }
   }
 }

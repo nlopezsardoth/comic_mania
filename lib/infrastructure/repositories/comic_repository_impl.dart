@@ -30,4 +30,9 @@ class ComicRepositoryImpl extends ComicsRepository {
   Future<List<Comic>> getThisMonthComics({int offset = 0}) {
     return datasource.getThisMonthComics(offset: offset);
   }
+
+  @override
+  Future<Comic?> getComicById(String id) {
+    return datasource.getComicById(id);
+  }
 }

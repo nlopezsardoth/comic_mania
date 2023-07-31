@@ -1,4 +1,5 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:comic_mania/config/router/app_router.dart';
 import 'package:comic_mania/domain/entities/comic.dart';
 import 'package:flutter/material.dart';
 
@@ -99,7 +100,10 @@ class _Slide extends StatelessWidget {
                           child: CircularProgressIndicator(strokeWidth: 2)),
                     );
                   }
-                  return FadeIn(child: child);
+                  return GestureDetector(
+                    onTap: () => appRouter.push('/comic/${comic.id}'),
+                    child: FadeIn(child: child),
+                  );
                 },
               ),
             ),

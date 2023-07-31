@@ -22,9 +22,10 @@ class ComicMapper {
     "editor": Role.editor,
     "inker": Role.inker,
     "letterer": Role.letterer,
+    "penciller": Role.penciler,
     "penciler": Role.penciler,
-    "penciler (cover)": Role.penilerCover,
-    "penciller": Role.penciller,
+    "penciller (cover)": Role.pencilerCover,
+    "penciler (cover)": Role.pencilerCover,
     "writer": Role.writer
   });
 }

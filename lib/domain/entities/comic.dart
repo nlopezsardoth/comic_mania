@@ -25,13 +25,4 @@ class Creator {
   Creator({required this.name, required this.role});
 }
 
-enum Role {
-  colorist,
-  editor,
-  inker,
-  letterer,
-  penciler,
-  penilerCover,
-  penciller,
-  writer
-}
+enum Role { colorist, editor, inker, letterer, penciler, pencilerCover, writer }
