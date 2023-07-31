@@ -98,6 +98,10 @@ class _ComicDetails extends StatelessWidget {
             role: Role.editor,
             title: "Editor",
           ),
+
+          const SizedBox(width: 20),
+
+          Text(comic.description ?? ""),
           const SizedBox(height: 50),
         ],
       ),

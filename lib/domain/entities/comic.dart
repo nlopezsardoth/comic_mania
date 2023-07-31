@@ -6,6 +6,7 @@ class Comic {
   final int pageCount;
   final String thumbNailPath;
   final List<Creator> creators;
+  final String price;
 
   Comic({
     required this.id,
@@ -15,6 +16,7 @@ class Comic {
     required this.pageCount,
     required this.thumbNailPath,
     required this.creators,
+    required this.price,
   });
 }
 

@@ -20,7 +20,7 @@ class SearchComicDelegate extends SearchDelegate<Comic?> {
     required this.searchComics,
     required this.initialComics,
   }) : super(
-          searchFieldLabel: 'Buscar películas',
+          searchFieldLabel: 'Find comics',
           // textInputAction: TextInputAction.done
         );
 
@@ -61,9 +61,6 @@ class SearchComicDelegate extends SearchDelegate<Comic?> {
       },
     );
   }
-
-  // @override
-  // String get searchFieldLabel => 'Buscar película';
 
   @override
   List<Widget>? buildActions(BuildContext context) {
@@ -159,9 +156,9 @@ class _ComicItem extends StatelessWidget {
                   Text(comic.title, style: textStyles.titleMedium),
                   Row(
                     children: [
-                      Icon(Icons.label, color: colors.primary),
+                      Icon(Icons.attach_money_outlined, color: colors.primary),
                       const SizedBox(width: 3),
-                      Text('Pages: ${comic.pageCount}',
+                      Text(comic.price,
                           style: textStyles.bodyMedium
                               ?.copyWith(color: colors.primary))
                     ],

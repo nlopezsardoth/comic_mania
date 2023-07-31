@@ -125,9 +125,9 @@ class _Slide extends StatelessWidget {
             width: 150,
             child: Row(
               children: [
-                Icon(Icons.label, color: colors.primary),
+                Icon(Icons.attach_money_outlined, color: colors.primary),
                 const SizedBox(width: 3),
-                Text('Pages: ${comic.pageCount}',
+                Text(comic.price,
                     style:
                         textStyles.bodyMedium?.copyWith(color: colors.primary)),
               ],
