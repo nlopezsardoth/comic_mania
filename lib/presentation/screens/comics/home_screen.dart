@@ -60,22 +60,22 @@ class _HomeViewState extends ConsumerState<_HomeView> {
             ComicsSlideshow(comics: slideShowComics),
             ComicHorizontalListview(
                 comics: thisWeekComics,
-                title: 'Esta semana',
+                title: 'This week',
                 loadNextPage: () =>
                     ref.read(thisWeekComicsProvider.notifier).loadNextPage()),
             ComicHorizontalListview(
                 comics: lastWeekComics,
-                title: 'Semana pasada',
+                title: 'Last week',
                 loadNextPage: () =>
                     ref.read(lastWeekComicsProvider.notifier).loadNextPage()),
             ComicHorizontalListview(
                 comics: nextWeekComics,
-                title: 'Próxima semana',
+                title: 'Next week',
                 loadNextPage: () =>
                     ref.read(nextWeekComicsProvider.notifier).loadNextPage()),
             ComicHorizontalListview(
                 comics: thisMonthComics,
-                title: 'Este mes',
+                title: 'This month',
                 loadNextPage: () =>
                     ref.read(thisMonthComicsProvider.notifier).loadNextPage()),
             const SizedBox(height: 10),

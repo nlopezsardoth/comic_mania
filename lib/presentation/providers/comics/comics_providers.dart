@@ -3,13 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../providers.dart';
 
-final allComicsProvider =
-    StateNotifierProvider<ComicsNotifier, List<Comic>>((ref) {
-  final fetchMoreComics = ref.watch(comicRepositoryProvider).getAllComics;
-
-  return ComicsNotifier(fetchMoreComics: fetchMoreComics);
-});
-
 final thisWeekComicsProvider =
     StateNotifierProvider<ComicsNotifier, List<Comic>>((ref) {
   final fetchMoreComics = ref.watch(comicRepositoryProvider).getThisWeekComics;

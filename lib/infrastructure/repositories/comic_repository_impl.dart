@@ -7,11 +7,6 @@ class ComicRepositoryImpl extends ComicsRepository {
   ComicRepositoryImpl(this.datasource);
 
   @override
-  Future<List<Comic>> getAllComics({int offset = 0}) {
-    return datasource.getAllComics(offset: offset);
-  }
-
-  @override
   Future<List<Comic>> getThisWeekComics({int offset = 0}) {
     return datasource.getThisWeekComics(offset: offset);
   }
@@ -34,5 +29,10 @@ class ComicRepositoryImpl extends ComicsRepository {
   @override
   Future<Comic?> getComicById(String id) {
     return datasource.getComicById(id);
+  }
+
+  @override
+  Future<List<Comic>> searchComics(String query) {
+    return datasource.searchComics(query);
   }
 }

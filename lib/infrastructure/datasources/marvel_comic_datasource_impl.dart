@@ -20,29 +20,6 @@ class MarvelComicsDatasource extends ComicsDatasource {
   )..interceptors.add(CustomLoggerInterceptor());
 
   @override
-  Future<List<Comic>> getAllComics({int offset = 0}) async {
-    try {
-      final Map<String, dynamic> queryParameters =
-          await EncryptionService().marvelEncryption();
-
-      final response = await dio.get(
-        '/comics',
-        queryParameters: queryParameters,
-      );
-      final marvelResponse = MarvelResponse.fromJson(response.data);
-
-      final List<Comic> comics = marvelResponse.data.results
-          .map((comicMarvel) => ComicMapper().marvelComicToEntity(comicMarvel))
-          .toList();
-
-      return comics;
-    } catch (e) {
-      log(e.toString());
-      return [];
-    }
-  }
-
-  @override
   Future<List<Comic>> getThisWeekComics({int offset = 0}) async {
     try {
       final Map<String, dynamic> queryParameters =
@@ -170,6 +147,31 @@ class MarvelComicsDatasource extends ComicsDatasource {
     } catch (e) {
       log(e.toString());
       return null;
+    }
+  }
+
+  @override
+  Future<List<Comic>> searchComics(String query) async {
+    try {
+      final Map<String, dynamic> queryParameters =
+          await EncryptionService().marvelEncryption();
+
+      queryParameters["title"] = query;
+
+      final response = await dio.get(
+        '/comics',
+        queryParameters: queryParameters,
+      );
+      final marvelResponse = MarvelResponse.fromJson(response.data);
+
+      final List<Comic> comics = marvelResponse.data.results
+          .map((comicMarvel) => ComicMapper().marvelComicToEntity(comicMarvel))
+          .toList();
+
+      return comics;
+    } catch (e) {
+      log(e.toString());
+      return [];
     }
   }
 }

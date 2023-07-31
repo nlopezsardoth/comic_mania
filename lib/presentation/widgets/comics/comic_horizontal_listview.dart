@@ -17,10 +17,10 @@ class ComicHorizontalListview extends StatefulWidget {
 
   @override
   State<ComicHorizontalListview> createState() =>
-      _MovieHorizontalListviewState();
+      _ComicHorizontalListviewState();
 }
 
-class _MovieHorizontalListviewState extends State<ComicHorizontalListview> {
+class _ComicHorizontalListviewState extends State<ComicHorizontalListview> {
   final scrollController = ScrollController();
 
   @override
@@ -74,7 +74,6 @@ class _Slide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textStyles = Theme.of(context).textTheme;
-
     final colors = Theme.of(context).colorScheme;
 
     return Container(
