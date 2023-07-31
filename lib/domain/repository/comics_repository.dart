@@ -1,5 +1,9 @@
 import '../entities/comic.dart';
 
 abstract class ComicsRepository {
-  Future<List<Comic>> getComics({int offset = 0});
+  Future<List<Comic>> getAllComics({int offset = 0});
+  Future<List<Comic>> getThisWeekComics({int offset = 0});
+  Future<List<Comic>> getLastWeekComics({int offset = 0});
+  Future<List<Comic>> getNextWeekComics({int offset = 0});
+  Future<List<Comic>> getThisMonthComics({int offset = 0});
 }

@@ -7,7 +7,27 @@ class ComicRepositoryImpl extends ComicsRepository {
   ComicRepositoryImpl(this.datasource);
 
   @override
-  Future<List<Comic>> getComics({int offset = 0}) {
-    return datasource.getComics(offset: offset);
+  Future<List<Comic>> getAllComics({int offset = 0}) {
+    return datasource.getAllComics(offset: offset);
+  }
+
+  @override
+  Future<List<Comic>> getThisWeekComics({int offset = 0}) {
+    return datasource.getThisWeekComics(offset: offset);
+  }
+
+  @override
+  Future<List<Comic>> getLastWeekComics({int offset = 0}) {
+    return datasource.getLastWeekComics(offset: offset);
+  }
+
+  @override
+  Future<List<Comic>> getNextWeekComics({int offset = 0}) {
+    return datasource.getNextWeekComics(offset: offset);
+  }
+
+  @override
+  Future<List<Comic>> getThisMonthComics({int offset = 0}) {
+    return datasource.getThisMonthComics(offset: offset);
   }
 }

@@ -6,8 +6,8 @@ class CustomLoggerInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     log('[DioInterceptor]: Request: ${options.method} ${options.uri}');
-    log('[DioInterceptor]: Headers: ${options.headers}');
-    log('[DioInterceptor]: Body: ${options.data}');
+    //log('[DioInterceptor]: Headers: ${options.headers}');
+    //log('[DioInterceptor]: Body: ${options.data}');
 
     super.onRequest(options, handler);
   }
@@ -15,8 +15,8 @@ class CustomLoggerInterceptor extends Interceptor {
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
     log('[DioInterceptor]: Response: ${response.statusCode}');
-    log('[DioInterceptor]: Body: ${response.data}');
-    log('[DioInterceptor]: Headers: ${response.headers}');
+    //log('[DioInterceptor]: Body: ${response.data}');
+    //log('[DioInterceptor]: Headers: ${response.headers}');
 
     super.onResponse(response, handler);
   }

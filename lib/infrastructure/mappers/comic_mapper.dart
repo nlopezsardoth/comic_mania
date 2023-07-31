@@ -8,7 +8,8 @@ class ComicMapper {
         issueNumber: comicMarvel.issueNumber,
         pageCount: comicMarvel.pageCount,
         thumbNailPath:
-            "${comicMarvel.thumbnail.path}.${comicMarvel.thumbnail.extension}",
+            "${comicMarvel.thumbnail.path}.${comicMarvel.thumbnail.extension}"
+                .replaceAll("http", "https"),
         creators: List<Creator>.from(
           comicMarvel.creators.items.map((creator) => Creator(
               name: creator.name ?? "",

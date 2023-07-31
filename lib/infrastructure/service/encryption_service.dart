@@ -18,7 +18,6 @@ class EncryptionService {
     Map<String, dynamic> parameters = {
       "ts": "$timestamp",
       "hash": hex.encode(digest.bytes),
-      "apikey": Environment.marvelPublicKey
     };
 
     return parameters;
