@@ -134,7 +134,7 @@ class _CreatorsWidget extends StatelessWidget {
                 title,
                 style: textStyles.titleMedium,
               ),
-              Text(creators.map((creator) => creator.name).toList().join(' ,')),
+              Text(creators.map((creator) => creator.name).toList().join(', ')),
               const SizedBox(
                 height: 10,
               )
